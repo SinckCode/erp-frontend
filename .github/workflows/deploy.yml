@@ -1,0 +1,17 @@
+name: Deploy ERP Frontend
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Call Deploy API
+        run: |
+          curl -sS -X POST "${{ secrets.DEPLOY_URL }}" \
+            -H "Authorization: Bearer ${{ secrets.DEPLOY_SECRET }}" \
+            -H "Content-Type: application/json" \
+            --data '{}'

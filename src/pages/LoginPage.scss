@@ -1,0 +1,79 @@
+@use "../styles/variables" as *;
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $bg-primary;
+}
+
+.login-card {
+  background: $bg-card;
+  padding: 2rem;
+  border-radius: $radius;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid $border-color;
+
+  h1 {
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    color: $text-secondary;
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+
+    label {
+      font-size: 0.9rem;
+      display: block;
+      margin-bottom: 0.3rem;
+      color: $text-secondary;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.7rem;
+      border-radius: $radius;
+      border: 1px solid $border-color;
+      background: $bg-secondary;
+      color: $text-primary;
+      transition: $transition;
+
+      &:focus {
+        border-color: $accent;
+        outline: none;
+      }
+    }
+
+    .error {
+      font-size: 0.8rem;
+      color: $danger;
+      margin-top: 0.3rem;
+    }
+  }
+
+  .btn-primary {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: $radius;
+    border: none;
+    background: $accent;
+    color: white;
+    font-weight: 600;
+    transition: $transition;
+
+    &:hover {
+      background: $accent-hover;
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+}

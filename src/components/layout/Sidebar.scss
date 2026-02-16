@@ -1,0 +1,135 @@
+@use "../../styles/variables" as *;
+
+$sidebar-width: 270px;
+
+.sidebarOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  pointer-events: none;
+  transition: $transition;
+  z-index: 40;
+
+  &--open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.sidebar {
+  width: $sidebar-width;
+  background: $bg-card;
+  border-right: 1px solid $border-color;
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+  z-index: 50;
+
+  /* ✅ MOBILE (default): drawer */
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  transform: translateX(-105%);
+  transition: $transition;
+
+  &--open {
+    transform: translateX(0%);
+  }
+
+  /* ✅ DESKTOP override */
+  @media (min-width: 768px) {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    transform: none;
+  }
+}
+
+.sidebar__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+
+.sidebar__brand {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.sidebar__logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: $accent;
+  font-weight: 800;
+}
+
+.sidebar__title {
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.sidebar__subtitle {
+  margin-top: 2px;
+  font-size: 0.85rem;
+  color: $text-secondary;
+}
+
+.sidebar__close {
+  border: 1px solid $border-color;
+  background: transparent;
+  color: $text-primary;
+  border-radius: 10px;
+  padding: 6px 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+/* nav */
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.nav__label {
+  font-size: 0.75rem;
+  color: $text-secondary;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 6px 0;
+}
+
+.nav__item {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 12px;
+  color: $text-secondary;
+  transition: $transition;
+
+  &:hover {
+    background: rgba(148, 163, 184, 0.08);
+    color: $text-primary;
+  }
+
+  &--active {
+    background: rgba(37, 99, 235, 0.18);
+    color: $text-primary;
+    border: 1px solid rgba(37, 99, 235, 0.25);
+  }
+}
