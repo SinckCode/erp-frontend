@@ -6,11 +6,11 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "http://localhost:4005",
+        target: "apierp.angelonesto.com",
         changeOrigin: true,
       },
       "/health": {
-        target: "http://localhost:4005",
+        target: "apierp.angelonesto.com",
         changeOrigin: true,
       },
     },
