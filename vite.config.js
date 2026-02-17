@@ -6,11 +6,11 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "http://192.168.100.106:4005",
+        target: "http://localhost:4005",
         changeOrigin: true,
       },
       "/health": {
-        target: "http://192.168.100.106:4005",
+        target: "http://localhost:4005",
         changeOrigin: true,
       },
     },
