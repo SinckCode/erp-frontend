@@ -1,12 +1,12 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: "/api", // para TODO lo que vive en /api
+  baseURL: "https://apierp.angelonesto.com/api",
   timeout: 15000,
 });
 
 export const rootApi = axios.create({
-  baseURL: "", // para endpoints en root, ej: /health
+  baseURL: "https://apierp.angelonesto.com",
   timeout: 15000,
 });
 
