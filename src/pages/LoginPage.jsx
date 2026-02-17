@@ -35,7 +35,7 @@ export default function LoginPage() {
   return (
     <div className="login-container">
       <form className="login-card" onSubmit={handleSubmit(onSubmit)}>
-        <h1>ERP Universidad Prueba</h1>
+        <h1>ERP Universidad</h1>
         <p>Inicia sesión para continuar</p>
 
         <div className="form-group">
