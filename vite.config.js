@@ -6,12 +6,14 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "apierp.angelonesto.com",
+        target: "https://apierp.angelonesto.com",
         changeOrigin: true,
+        secure: true,
       },
       "/health": {
-        target: "apierp.angelonesto.com",
+        target: "https://apierp.angelonesto.com",
         changeOrigin: true,
+        secure: true,
       },
     },
   },
